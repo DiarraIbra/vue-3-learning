@@ -1,17 +1,19 @@
 <script setup>
 import { ref } from 'vue'
 import ProductDisplay from '@/components/ProductDisplay.vue'
-const desc=ref("je suis une description")
 const cart = ref([])
 const premium = ref(true)
-
+import socksGreen from './assets/images/socks_green.jpeg'
+const image =ref(socksGreen)
 const updateCart = (id) => {
   cart.value.push(id)
 }
 </script>
   
 <template>
-  <p>Ma description est <strong>{{ desc }}</strong></p>
+  <div class="product-image">
+<img :src="image" alt="">
+  </div>
   <div class="nav-bar"></div>
   <div class="cart">Cart({{ cart.length }})</div>
   <ProductDisplay :premium="premium" @add-to-cart="updateCart"></ProductDisplay>
