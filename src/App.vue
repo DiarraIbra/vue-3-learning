@@ -3,43 +3,44 @@ import { ref } from 'vue'
 import ProductDisplay from '@/components/ProductDisplay.vue'
 const cart = ref([])
 const premium = ref(true)
-import socksGreen from './assets/images/socks_green.jpeg'
-const image =ref(socksGreen)
-const url_link = 'https://vuejs.org/'
-const inStock = ref(true)
-const onSale = ref(false)
-const details = ref(['50% cotton', '30% wool', '20% polyester'])
-const variants=ref([
-  {
-    id: 2234,
-    color: 'green',
-    dispo:false
-  },
-  {
-    id: 2235,
-    color: 'blue',
-    dispo:true
-  }
-])
-const tableau=ref(["vert","jaune","rouge"])
+// import socksGreen from './assets/images/socks_green.jpeg'
+// const image =ref(socksGreen)
+//const url_link = ref('https://vuejs.org/')
+// const inStock = ref(true)
+// const onSale = ref(false)
+// const details = ref(['50% cotton', '30% wool', '20% polyester'])
+// const variants=ref([
+//   {
+//     id: 2234,
+//     color: 'green',
+//     dispo:false
+//   },
+//   {
+//     id: 2235,
+//     color: 'blue',
+//     dispo:true
+//   }
+// ])
+// const tableau=ref(["vert","jaune","rouge"])
 const updateCart = (id) => {
   cart.value.push(id)
 }
-const cart_test=ref(0)
-const addToCartTest=()=> {
-  cart_test.value+=1
-  console.log(cart_test.value)
-}
-const decremeter=()=>{
-  if(cart_test.value <= 0) {
-    return alert('Le panier est vide')
-  }
-  cart_test.value-=1
-}
+// const cart_test=ref(0)
+// const addToCartTest=()=> {
+//   cart_test.value+=1
+//   console.log(cart_test.value)
+// }
+// const decremeter=()=>{
+//   if(cart_test.value <= 0) {
+//     return alert('Le panier est vide')
+//   }
+//   cart_test.value-=1
+// }
 </script>
   
 <template>
-  <div class="product-image">
+  <!-- <a :href="url_link" target="_blank">Lien vers le site de Vue</a> -->
+  <!-- <div class="product-image">
     <img :src="image" alt="">
     <a :href="url_link" target="_blank">Lien vers le site de Vue</a>
     <p v-if="inStock">En stock</p>
@@ -60,12 +61,12 @@ const decremeter=()=>{
     <button @click="addToCartTest">Ajouter au panier</button>
     <button @click="decremeter">Enlever du panier</button>
     <span class="span-button">{{cart_test}}</span>
-  </div>
+  </div> -->
   <div class="nav-bar"></div>
   <div class="cart">Cart({{ cart.length }})</div>
   <ProductDisplay :premium="premium" @add-to-cart="updateCart"></ProductDisplay>
 </template>
-<style>
+<!-- <style>
 .span-button{
   background-color: red;
   color: white;
@@ -78,4 +79,4 @@ const decremeter=()=>{
   margin: 20px auto;
   text-align: center;
 }
-</style>
+</style> -->
