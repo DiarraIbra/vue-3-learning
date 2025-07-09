@@ -21,8 +21,14 @@ const variants=ref([
     dispo:true
   }
 ])
+const tableau=ref(["vert","jaune","rouge"])
 const updateCart = (id) => {
   cart.value.push(id)
+}
+const cart_test=ref(0)
+const addToCartTest=()=> {
+  cart_test.value+=1
+  console.log(cart_test.value)
 }
 </script>
   
@@ -44,6 +50,8 @@ const updateCart = (id) => {
          variant dispo  {{ variant.color }}
         </p></li>
     </ul>
+    La couleur du drapeau du mali est : <div v-for="tab in tableau">{{ tab }}</div>
+    <button @click="addToCartTest">Ajouter au panier</button>
   </div>
   <div class="nav-bar"></div>
   <div class="cart">Cart({{ cart.length }})</div>
